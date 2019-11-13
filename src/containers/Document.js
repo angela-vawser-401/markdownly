@@ -33,7 +33,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  markdown: state.markdown
+  markdown: state.editor.markdown
 });
 
 export default connect(
