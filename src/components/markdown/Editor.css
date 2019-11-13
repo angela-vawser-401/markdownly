@@ -19,7 +19,8 @@
     font-size: 1.5em;
     letter-spacing: 0.3px;
     word-spacing: 1px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
+    border-top-left-radius: 10%;
   }
 
   textarea {
@@ -38,6 +39,6 @@
 
   .active {
     border-bottom: none;
-    background: gray;
+    background: #272822;
   }
 }
