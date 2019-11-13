@@ -4,7 +4,15 @@ import styles from './Editor.css';
 
 function Editor({ markdown, updateMarkdown }) {
   return (
-    <textarea className={styles.Editor} value={markdown} onChange={updateMarkdown} />
+    <section className={styles.Editor}>
+      <div>
+        <button className={styles.active} type="radio">tab 1</button>
+        <button type="radio">tab 2</button>
+        <button type="radio">tab 3</button>
+        <button type="radio">+</button>
+      </div>
+      <textarea value={markdown} onChange={updateMarkdown} />
+    </section>
   );
 }
 
