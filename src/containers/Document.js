@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Preview from './Preview';
-import Editor from './Editor';
+import Preview from '../components/markdown/Preview';
+import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
 import PropTypes from 'prop-types';
-import { updateMarkdown } from '../../actions/editorActions';
+import { updateMarkdown } from '../actions/editorActions';
 
 
 const Document = ({ markdown, handleMarkdownChange }) => {
