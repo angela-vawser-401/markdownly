@@ -2,26 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Editor.css';
 
-const TabList = ({ active, list, handleTabClick }) => {
+const TabList = ({ activeIndex, list, handleTabClick }) => {
 
   return (
     <div>
       {list.map((item, idx) => (
         <button
           key={item}
-          type="radio"
           onClick={() => { handleTabClick(idx); }}
-          className={active === idx ? styles.active : styles.tabButton} >
+          className={activeIndex === idx ? styles.active : styles.tabButton} >
           {`tab ${idx}`}
         </button>
       ))}
-      <button className={styles.addTab} type="radio">+</button>
+      <button className={styles.addTab} >+</button>
     </div>
   );
 };
 
 TabList.propTypes = {
-  active: PropTypes.number.isRequired,
+  activeIndex: PropTypes.number.isRequired,
   list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   handleTabClick: PropTypes.func.isRequired
 };

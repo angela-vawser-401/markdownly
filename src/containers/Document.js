@@ -7,17 +7,16 @@ import { updateMarkdown } from '../actions/editorActions';
 import { getActiveMarkdown } from '../selector/markdownSelector';
 
 // eslint-disable-next-line react/prop-types
-const Document = ({ markdown, active, handleMarkdownChange }) => {
+const Document = ({ activeMarkdown, handleMarkdownChange }) => {
   return (
     <>
       <div className={styles.Document}>
         <Editor
-          active={active}
-          markdown={markdown}
+          activeMarkdown={activeMarkdown}
           handleMarkdownChange={handleMarkdownChange}
         />
         <Preview
-          markdown={active}
+          activeMarkdown={activeMarkdown}
         />
       </div>
     </>
@@ -31,33 +30,10 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  active: getActiveMarkdown(state),
-  markdown: state.editor.list
+  activeMarkdown: getActiveMarkdown(state)
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Document);
-
-// export default class Document extends PureComponent {
-//   state = {
-//     markdown: '# Hi there'
-//   };
-
-//   updateMarkdown = ({ target }) => {
-//     this.setState({ markdown: target.value });
-//   };
-
-//   render() {
-//     const { markdown } = this.state;
-//     return (
-//       <>
-//         <div className={styles.Document}>
-//           <Editor markdown={markdown} updateMarkdown={this.updateMarkdown} />
-//           <Preview markdown={markdown} />
-//         </div>
-//       </>
-//     );
-//   }
-// }
