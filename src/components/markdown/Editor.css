@@ -26,6 +26,20 @@
     border: none;
   }
 
+  .deleteButton{
+    border: transparent;
+    border-radius: 50%;
+    background: none;
+    margin-left: .7em; 
+    font-size: .8em;
+    padding-bottom: .2em; 
+  }
+  
+  .deleteButton:hover{
+    background: black;
+    color: white;
+  }
+
   .active:focus {
     outline: none;
   }
