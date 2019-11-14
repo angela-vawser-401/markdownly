@@ -1,16 +1,31 @@
 import React from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import TabList from '../components/markdown/TabList';
+import { setActiveTab } from '../actions/editorActions';
 
-
-const Tabs = () => {
+// eslint-disable-next-line react/prop-types
+const Tabs = ({ active, list, handleTabClick }) => {
   return (
-    <TabList />
+    <TabList list={list} active={active} handleTabClick={handleTabClick} />
   );
 };
 
-export default Tabs;
+const mapStateToProps = state => ({
+  active: state.editor.active,
+  list: state.editor.list
+});
+
+const mapDispatchToProps = dispatch => ({
+  handleTabClick(num) {
+    dispatch(setActiveTab(num));
+  }
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tabs);
 // Document.propTypes = {
 //   markdown: PropTypes.string.isRequired,
 //   handleMarkdownChange: PropTypes.func.isRequired

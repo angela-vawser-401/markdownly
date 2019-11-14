@@ -3,27 +3,26 @@ import { connect } from 'react-redux';
 import Preview from '../components/markdown/Preview';
 import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
-import PropTypes from 'prop-types';
 import { updateMarkdown } from '../actions/editorActions';
 
 
-const Document = ({ markdown, handleMarkdownChange }) => {
+// eslint-disable-next-line react/prop-types
+const Document = ({ markdown, active, handleMarkdownChange }) => {
   return (
     <>
       <div className={styles.Document}>
         <Editor
+          active={active}
           markdown={markdown}
           handleMarkdownChange={handleMarkdownChange}
         />
-        <Preview markdown={markdown} />
+        <Preview 
+          active={active}
+          markdown={markdown} 
+        />
       </div>
     </>
   );
-};
-
-Document.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  handleMarkdownChange: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -33,7 +32,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  markdown: state.editor.markdown
+  active: state.editor.active,
+  markdown: state.editor.list
 });
 
 export default connect(

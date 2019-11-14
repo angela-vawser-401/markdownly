@@ -1,8 +1,10 @@
 import { UPDATE_MARKDOWN } from '../actions/editorActions';
 
 const initialState = {
-  markdown: '# Hi there'
+  active: 0,
+  list: ['# Hi there', '#sup sup', '#macaroon']
 };
+
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {

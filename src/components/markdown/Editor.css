@@ -13,7 +13,8 @@
     border-bottom: none;
     background: #272822;
     margin: 0px 5px;
-    padding: .5em 1.2em;
+    padding: .3em 1.2em;
+    max-width: 6em;
     color: #F8F8F2;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5em;
@@ -33,18 +34,20 @@
     word-spacing: 1px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
     border-top-left-radius: 10%;
+    max-width: 6em;
   }
 
   .addTab {
     margin: 0px 5px;
-    padding: .7em .7em .8em .7em;
+    padding: .4em .7em .5em .7em;
     background: #272822;
     color: #F8F8F2;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5em;
     letter-spacing: 0.3px;
     word-spacing: 1px;
-    clip-path: circle(40%);  
+    clip-path: circle(40%); 
+    max-width: 3em;
   }
 
   textarea {
