@@ -10,7 +10,7 @@ const TabList = ({ active, list, handleTabClick }) => {
         <button
           key={item}
           type="radio"
-          onClick={handleTabClick}
+          onClick={() => { handleTabClick(idx); }}
           className={active === idx ? styles.active : styles.tabButton} >
           {`tab ${idx}`}
         </button>

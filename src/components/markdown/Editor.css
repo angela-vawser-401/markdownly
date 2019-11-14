@@ -21,6 +21,11 @@
     letter-spacing: 0.3px;
     word-spacing: 1px;
     clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
+    outline: none;
+  }
+
+  .active:focus {
+    outline: none;
   }
 
   .tabButton {
@@ -35,6 +40,7 @@
     clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
     border-top-left-radius: 10%;
     max-width: 6em;
+    outline: none;
   }
 
   .addTab {
