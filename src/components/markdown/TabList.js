@@ -12,7 +12,7 @@ const TabList = ({ activeIndex, list, handleTabClick, handleTabClose }) => {
           className={activeIndex === idx ? styles.active : styles.tab} >
           <span onClick={() => { handleTabClick(idx); }}
           >{`tab ${idx}`}</span>
-          <button onClick={() => handleTabClose(idx)}>x</button>
+          <button className={styles.deleteButton} onClick={() => handleTabClose(idx)}>x</button>
         </div>
       ))}
       <button className={styles.addTab} >+</button>
