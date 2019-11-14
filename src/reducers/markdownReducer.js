@@ -2,9 +2,8 @@ import { UPDATE_MARKDOWN, SET_ACTIVE_TAB } from '../actions/editorActions';
 
 const initialState = {
   active: 0,
-  list: ['# Hi there', '#sup sup', '#macaroon']
+  list: ['# Hi there', '# sup sup', '# macaroon']
 };
-
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {

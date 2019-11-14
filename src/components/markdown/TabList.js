@@ -27,19 +27,3 @@ TabList.propTypes = {
 };
 
 export default TabList;
-// const TabList = ({ list }) => {
-
-//   return (
-//     <div>
-//       <button className={styles.active} type="radio">tab 1</button>
-//       <button className={styles.tabButton} type="radio">tab 2</button>
-//       <button className={styles.tabButton} type="radio">tab 3</button>
-//       <button className={styles.addTab} type="radio">+</button>
-//     </div>
-//   );
-
-// };
-// TabCard.propTypes = {
-
-// };
-

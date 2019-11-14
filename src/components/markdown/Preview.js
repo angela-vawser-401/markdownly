@@ -4,12 +4,12 @@ import marked from 'marked';
 import styles from 'github-markdown-css/github-markdown.css';
 
 function Preview({ markdown }) {
-  const __html = marked(markdown[0]);
+  const __html = marked(markdown);
   return <div className={`${styles['markdown-body']} ${styles.Preview}`} dangerouslySetInnerHTML={{ __html }}></div>;
 }
 
 Preview.propTypes = {
-  markdown: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired
+  markdown: PropTypes.string.isRequired
 };
 
 export default Preview;

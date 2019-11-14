@@ -4,7 +4,7 @@ import Preview from '../components/markdown/Preview';
 import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
 import { updateMarkdown } from '../actions/editorActions';
-
+import { getActiveMarkdown } from '../selector/markdownSelector';
 
 // eslint-disable-next-line react/prop-types
 const Document = ({ markdown, active, handleMarkdownChange }) => {
@@ -16,9 +16,8 @@ const Document = ({ markdown, active, handleMarkdownChange }) => {
           markdown={markdown}
           handleMarkdownChange={handleMarkdownChange}
         />
-        <Preview 
-          active={active}
-          markdown={markdown} 
+        <Preview
+          markdown={active}
         />
       </div>
     </>
@@ -32,7 +31,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-  active: state.editor.active,
+  active: getActiveMarkdown(state),
   markdown: state.editor.list
 });
 
