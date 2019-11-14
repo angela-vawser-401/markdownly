@@ -1,9 +1,12 @@
 import { UPDATE_MARKDOWN, SET_ACTIVE_TAB, DELETE_TAB } from '../actions/editorActions';
+import { loadState } from '../localStorage';
 
-const initialState = {
+const defaultState = {
   active: 0,
   list: ['# Hi there', '# sup sup', '# macaroon']
 };
+
+const initialState = loadState() ? loadState().state.editor : defaultState;
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
