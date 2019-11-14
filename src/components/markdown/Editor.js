@@ -4,18 +4,18 @@ import styles from './Editor.css';
 import Tabs from '../../containers/Tabs';
 import SaveContainer from '../../containers/SaveContainer';
 
-function Editor({ markdown, handleMarkdownChange }) {
+function Editor({ activeMarkdown, handleMarkdownChange }) {
   return (
     <section className={styles.Editor}>
       <Tabs />
-      <textarea value={markdown} onChange={handleMarkdownChange} />
+      <textarea value={activeMarkdown} onChange={handleMarkdownChange} />
       <SaveContainer />
     </section>
   );
 }
 
 Editor.propTypes = {
-  markdown: PropTypes.string.isRequired,
+  activeMarkdown: PropTypes.string.isRequired,
   handleMarkdownChange: PropTypes.func.isRequired
 };
 

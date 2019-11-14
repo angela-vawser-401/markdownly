@@ -1,22 +1,28 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import styles from './Editor.css';
 
-const Tab = () => {
+const TabList = ({ activeIndex, list, handleTabClick }) => {
 
   return (
     <div>
-      <button className={styles.active} type="radio">tab 1</button>
-      <button className={styles.tabButton} type="radio">tab 2</button>
-      <button className={styles.tabButton} type="radio">tab 3</button>
-      <button className={styles.addTab} type="radio">+</button>
+      {list.map((item, idx) => (
+        <button
+          key={item}
+          onClick={() => { handleTabClick(idx); }}
+          className={activeIndex === idx ? styles.active : styles.tabButton} >
+          {`tab ${idx}`}
+        </button>
+      ))}
+      <button className={styles.addTab} >+</button>
     </div>
   );
-
 };
 
-// TabCard.propTypes = {
+TabList.propTypes = {
+  activeIndex: PropTypes.number.isRequired,
+  list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  handleTabClick: PropTypes.func.isRequired
+};
 
-// };
-
-export default Tab;
+export default TabList;
