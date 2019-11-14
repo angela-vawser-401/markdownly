@@ -15,7 +15,7 @@
     border-bottom: none;
     background: #ffe8c9;
     margin: 0px 5px;
-    padding: .3em 1.2em;
+    padding: .5em 1.2em;
     max-width: 6em;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5em;
@@ -30,7 +30,7 @@
     outline: none;
   }
 
-  .tabButton {
+  .tab {
     margin: 0px 5px;
     padding: .5em 1.2em;
     background: #edd4b3;

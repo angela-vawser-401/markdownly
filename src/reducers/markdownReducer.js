@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, SET_ACTIVE_TAB } from '../actions/editorActions';
+import { UPDATE_MARKDOWN, SET_ACTIVE_TAB, DELETE_TAB } from '../actions/editorActions';
 
 const initialState = {
   active: 0,
@@ -16,6 +16,14 @@ export default function reducer(state = initialState, action) {
       };
     case SET_ACTIVE_TAB:
       return { ...state, active: action.payload };
+    case DELETE_TAB:
+      console.log(state.active === Number(action.payload));
+      return {
+        ...state, list: state.list.filter((item, i) => (
+          i !== Number(action.payload)
+        )),
+        active: state.active === Number(action.payload) ? state.active - 1 : state.active
+      };
     default:
       return state;
   }

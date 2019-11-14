@@ -9,3 +9,9 @@ export const setActiveTab = (num) => ({
   type: SET_ACTIVE_TAB,
   payload: num
 });
+
+export const DELETE_TAB = 'DELETE_TAB';
+export const deleteTab = (num) => ({
+  type: DELETE_TAB,
+  payload: num
+});
