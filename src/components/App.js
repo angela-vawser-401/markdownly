@@ -5,7 +5,7 @@ import styles from './Main.css';
 export default function App() {
   return (
     <>
-      <h1 className={styles.Header}>Markdown Editor</h1>
+      <h1 className={styles.Header}><span>M</span>arkdo<span className={styles.doubleu}>w</span>n <span>E</span>ditor</h1>
       <Document className={styles.Main}/>
     </>
   );
