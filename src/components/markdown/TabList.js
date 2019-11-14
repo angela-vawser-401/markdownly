@@ -9,9 +9,9 @@ const TabList = ({ activeIndex, list, handleTabClick, handleTabClose }) => {
       {list.map((item, idx) => (
         <div
           key={item}
-          onClick={() => { handleTabClick(idx); }}
           className={activeIndex === idx ? styles.active : styles.tab} >
-          {`tab ${idx}`}
+          <span onClick={() => { handleTabClick(idx); }}
+          >{`tab ${idx}`}</span>
           <button onClick={() => handleTabClose(idx)}>x</button>
         </div>
       ))}

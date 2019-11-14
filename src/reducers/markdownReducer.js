@@ -17,12 +17,11 @@ export default function reducer(state = initialState, action) {
     case SET_ACTIVE_TAB:
       return { ...state, active: action.payload };
     case DELETE_TAB:
-      console.log(state.active === Number(action.payload));
       return {
         ...state, list: state.list.filter((item, i) => (
           i !== Number(action.payload)
         )),
-        active: state.active === Number(action.payload) ? state.active - 1 : state.active
+        active: state.active === Number(action.payload) && state.active > 0 ? state.active - 1 : state.active
       };
     default:
       return state;
