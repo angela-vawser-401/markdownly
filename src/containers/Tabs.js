@@ -3,17 +3,18 @@ import { connect } from 'react-redux';
 // import PropTypes from 'prop-types';
 import TabList from '../components/markdown/TabList';
 import { setActiveTab } from '../actions/editorActions';
+import { getMarkdownArray, getActiveIndex } from '../selector/markdownSelector';
 
 // eslint-disable-next-line react/prop-types
-const Tabs = ({ active, list, handleTabClick }) => {
+const Tabs = ({ activeIndex, list, handleTabClick }) => {
   return (
-    <TabList list={list} active={active} handleTabClick={handleTabClick} />
+    <TabList list={list} activeIndex={activeIndex} handleTabClick={handleTabClick} />
   );
 };
 
 const mapStateToProps = state => ({
-  active: state.editor.active,
-  list: state.editor.list
+  activeIndex: getActiveIndex(state),
+  list: getMarkdownArray(state)
 });
 
 const mapDispatchToProps = dispatch => ({
