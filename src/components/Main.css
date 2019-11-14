@@ -1,5 +1,5 @@
-.Main {
-  font-family: 'Roboto Mono', monospace;
+.Header {
+  font-family: 'Yeseva One', cursive;
   text-transform: uppercase;
   text-align: center;
   font-weight: 700;
@@ -7,6 +7,9 @@
   letter-spacing: 0.3px;
   word-spacing: 1px;
   padding: .5em;
-  margin-top: 0;
-  background: linear-gradient(90deg, rgba(255,56,56,1) 0%, rgba(69,71,255,1) 100%);
+  margin: 0px;
+  background: black;
+  color: white;
 }
+
+

@@ -1,3 +1,4 @@
 .Document {
-  display: flex
+  display: flex;
+  padding-top: 2em;
 }
