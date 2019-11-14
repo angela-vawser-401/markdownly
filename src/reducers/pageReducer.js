@@ -1,6 +1,9 @@
 import { SAVE_MARKDOWN } from '../actions/pageActions';
+import { loadState } from '../localStorage';
 
-const initialState = [];
+const defaultState = [];
+
+const initialState = loadState() ? loadState().state.saves : defaultState;
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
