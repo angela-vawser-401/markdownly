@@ -1,14 +1,14 @@
 import { UPDATE_MARKDOWN, SET_ACTIVE_TAB, DELETE_TAB, ADD_TAB } from '../actions/editorActions';
-import { loadState } from '../localStorage';
+// import { loadState } from '../localStorage';
 
 const defaultState = {
   active: 0,
   list: ['# Hi there', '# sup sup', '# macaroon']
 };
 
-const initialState = loadState() ? loadState().state.editor : defaultState;
+// const initialState = loadState() ? loadState().state.editor : defaultState;
 
-export default function reducer(state = initialState, action) {
+export default function reducer(state = defaultState, action) {
   switch(action.type) {
     case UPDATE_MARKDOWN:
       return {
