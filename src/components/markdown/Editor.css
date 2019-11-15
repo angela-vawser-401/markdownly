@@ -62,8 +62,8 @@
   .addTab {
     margin: 0px 5px;
     padding: .4em .7em .5em .7em;
-    background: #272822;
-    color: #F8F8F2;
+    background: pink;
+    color: black;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5em;
     letter-spacing: 0.3px;
@@ -75,7 +75,7 @@
   textarea {
     padding: 1em;
     width: 50vw;
-    height: 100vh;
+    height: 78.5%;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5em;
     line-height: 1.5;
