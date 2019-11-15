@@ -15,3 +15,8 @@ export const deleteTab = (num) => ({
   type: DELETE_TAB,
   payload: num
 });
+
+export const ADD_TAB = 'ADD_TAB';
+export const addTab = () => ({
+  type: ADD_TAB
+});

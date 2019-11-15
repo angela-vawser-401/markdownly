@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, SET_ACTIVE_TAB, DELETE_TAB } from '../actions/editorActions';
+import { UPDATE_MARKDOWN, SET_ACTIVE_TAB, DELETE_TAB, ADD_TAB } from '../actions/editorActions';
 import { loadState } from '../localStorage';
 
 const defaultState = {
@@ -25,6 +25,11 @@ export default function reducer(state = initialState, action) {
           i !== Number(action.payload)
         )),
         active: state.active === Number(action.payload) && state.active > 0 ? state.active - 1 : state.active
+      };
+    case ADD_TAB:
+      return {
+        ...state, list: [...state.list, `# Markdown ${state.list.length}`],
+        active: state.list.length
       };
     default:
       return state;

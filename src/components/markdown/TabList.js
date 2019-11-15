@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Editor.css';
 
-const TabList = ({ activeIndex, list, handleTabClick, handleTabClose }) => {
+const TabList = ({ activeIndex, list, handleTabClick, handleTabClose, handleAddTab }) => {
 
   return (
     <div>
@@ -15,7 +15,7 @@ const TabList = ({ activeIndex, list, handleTabClick, handleTabClose }) => {
           <button className={styles.deleteButton} onClick={() => handleTabClose(idx)}>x</button>
         </div>
       ))}
-      <button className={styles.addTab} >+</button>
+      <button className={styles.addTab} onClick={() => handleAddTab()}>+</button>
     </div>
   );
 };
@@ -24,7 +24,8 @@ TabList.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   list: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
   handleTabClick: PropTypes.func.isRequired,
-  handleTabClose: PropTypes.func.isRequired
+  handleTabClose: PropTypes.func.isRequired,
+  handleAddTab: PropTypes.func.isRequired
 };
 
 export default TabList;
