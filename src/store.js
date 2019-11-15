@@ -13,7 +13,6 @@ const store = createStore(
 store.subscribe(() => {
   const state = store.getState();
   saveState({ state: state });
-})
-;
+});
 
 export default store;
