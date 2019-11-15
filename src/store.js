@@ -1,18 +1,21 @@
-import { createStore, compose } from 'redux';
+/* eslint-disable no-console */
+import { createStore, applyMiddleware } from 'redux';
 import reducer from './reducers';
-import { saveState } from './localStorage';
+// import { saveState } from './localStorage';
 
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const loggerMiddleware = store => next => action => {
+  console.log('in my logger', action, store.getState());
 
-const store = createStore(
+  next(action);
+
+  console.log('current state', store.getState());
+};
+
+export default createStore(
   reducer,
-  composeEnhancers()
+  applyMiddleware(
+    loggerMiddleware
+  )
 );
-
-store.subscribe(() => {
-  const state = store.getState();
-  saveState({ state: state });
-});
-
-export default store;
