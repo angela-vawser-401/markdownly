@@ -1,0 +1,29 @@
+.SplashPage {
+  background-image: url('../../assets/iStock-915520716.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  align-content: center;
+  justify-content: center;
+
+  h1 {
+    font-family: 'Yeseva One', cursive;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2.5em;
+    letter-spacing: .05em;
+    word-spacing: 1px;
+    color: white;
+  }
+
+  p {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5em;
+    letter-spacing: 0.3px;
+    word-spacing: 1px;
+    color: white;
+    background: black;
+  }
+}

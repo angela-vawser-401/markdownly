@@ -1,12 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Document from '../containers/Document';
-import styles from './Main.css';
+// import styles from './Main.css';
+import SplashPage from './markdown/SplashPage';
+import Header from './markdown/Header';
 
 export default function App() {
   return (
     <>
-      <h1 className={styles.Header}><span>M</span>arkdo<span className={styles.doubleu}>w</span>n <span>E</span>ditor</h1>
-      <Document className={styles.Main}/>
+      <Header /> 
+      <Router>
+        <Switch>
+          <Route path="/" component={Document} />
+          <Route path="/about" component={SplashPage} />
+        </Switch>
+      </Router>
     </>
   );
 }
