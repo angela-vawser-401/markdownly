@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Preview from '../components/markdown/Preview';
 import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
@@ -7,7 +7,11 @@ import { updateMarkdown } from '../actions/editorActions';
 import { getActiveMarkdown } from '../selector/markdownSelector';
 
 // eslint-disable-next-line react/prop-types
-const Document = ({ activeMarkdown, handleMarkdownChange }) => {
+const Document = () => {
+  const dispatch = useDispatch();
+  const handleMarkdownChange = ({ target }) => dispatch(updateMarkdown(target.value));
+  const activeMarkdown = useSelector(getActiveMarkdown);
+
   return (
     <>
       <div className={styles.Document}>
@@ -23,17 +27,4 @@ const Document = ({ activeMarkdown, handleMarkdownChange }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleMarkdownChange({ target }) {
-    dispatch(updateMarkdown(target.value));
-  }
-});
-
-const mapStateToProps = state => ({
-  activeMarkdown: getActiveMarkdown(state)
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Document);
+export default Document;

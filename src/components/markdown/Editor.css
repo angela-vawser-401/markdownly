@@ -8,20 +8,20 @@
   div{
     display: flex;
     flex-direction: row;
-    margin-left: 2em;
+    margin-left: 1em;
   }
 
   .active {
     border-bottom: none;
     background: #ffe8c9;
     margin: 0px 5px;
-    padding: .5em 1.2em;
+    padding: .7em 1.2em;
     max-width: 6em;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.5em;
+    font-size: 1em;
     letter-spacing: 0.3px;
     word-spacing: 1px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 115%, 0% 115%);
     outline: none;
     border: none;
   }
@@ -31,8 +31,9 @@
     border-radius: 50%;
     background: none;
     margin-left: .7em; 
+    margin-right: -.3em;
     font-size: .8em;
-    padding-bottom: .2em; 
+    padding-bottom: .4em; 
   }
   
   .deleteButton:hover{
@@ -46,13 +47,13 @@
 
   .tab {
     margin: 0px 5px;
-    padding: .5em 1.2em;
+    padding: .7em 1.2em;
     background: #edd4b3;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.5em;
+    font-size: 1em;
     letter-spacing: 0.3px;
     word-spacing: 1px;
-    clip-path: polygon(10% 0%, 90% 0%, 100% 110%, 0% 110%);
+    clip-path: polygon(10% 0%, 90% 0%, 100% 115%, 0% 115%);
     border-top-left-radius: 10%;
     max-width: 6em;
     outline: none;
@@ -65,7 +66,7 @@
     background: pink;
     color: black;
     font-family: 'Roboto Mono', monospace;
-    font-size: 1.5em;
+    font-size: 1.25em;
     letter-spacing: 0.3px;
     word-spacing: 1px;
     clip-path: circle(40%); 
@@ -73,7 +74,7 @@
   }
 
   textarea {
-    padding: 1em;
+    padding: 2em;
     width: 50vw;
     height: 78.5%;
     font-family: 'Roboto Mono', monospace;

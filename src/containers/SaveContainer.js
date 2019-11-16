@@ -1,26 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Save from '../components/markdown/Save';
 import { saveMarkdown } from '../actions/pageActions';
 
 // eslint-disable-next-line react/prop-types
-const SaveContainer = ({ handleSave, markdown }) => {
+const SaveContainer = () => {
+  const dispatch = useDispatch();
+  const handleSave = (markdown) => dispatch(saveMarkdown(markdown));
+  const markdown = useSelector(state => state.editor);
+
   return (
     <Save handleSave={() => { handleSave(markdown); }} />
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  handleSave(markdown) {
-    dispatch(saveMarkdown(markdown));
-  }
-});
-
-const mapStateToProps = state => ({
-  markdown: state.editor
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SaveContainer);
+export default SaveContainer;
